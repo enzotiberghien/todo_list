@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1 id="page-title">Todo List</h1>
+    </header>
+
+    <main>
+        <div id="navbar">
+            <h2 id="tasks" class="navbar-items"><i class="fa-solid fa-inbox"></i> Tasks</h2>
+            <h2 id="today" class="navbar-items"><i class="fa-solid fa-calendar-day"></i> Today</h2>
+            <h2 id="upcoming" class="navbar-items"><i class="fa-solid fa-calendar-week"></i> Upcoming</h2>
+            <div id="projects-container">
+                <h2 id="project" class="navbar-items">Projects</h2>
+                <div id="project-list"></div>
+                <h2 id="add-project-btn" class="navbar-items"><i class="fa-solid fa-circle-plus"></i> Add Project</h2>
+                <form action="#" class="add-project-form" id="project-form">
+                    <div>
+                        <input type="text" placeholder="Title" id="title-project" required>
+                    </div>
+                    <div>
+                        <button type="submit">Add</button>
+                        <button id="form-project-cancel">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="content"></div>
+    </main>
+
+    <footer>
+        <h3>Make by Enzo Tiberghien</h3>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="https://kit.fontawesome.com/14d7bbfec3.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
