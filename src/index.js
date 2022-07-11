@@ -17,15 +17,16 @@ const projectCancelBtn = document.querySelector("#form-project-cancel");
 const content = document.querySelector("#content");
 const deleteBtns = document.querySelectorAll(".delete-btn");
 const editBtns = document.querySelectorAll(".edit-btn");
-const taskDivs = document.querySelectorAll(".task");
+let taskDivs = document.querySelectorAll(".task");
 const tasksBtn = document.querySelector("#tasks");
 const todayBtn = document.querySelector("#today");
 const upcomingBtn = document.querySelector("#upcoming");
 const projectTabs = document.querySelectorAll(".project");
 
 // Reset Tasks page
-function resetPage() {   
-    if (content.querySelector("#project-page")) {
+function resetPage() {
+    taskDivs = document.querySelectorAll(".task");   
+    if (document.querySelector("#project-page")) {
         document.querySelector("#project-page").remove();
     }
     taskDivs.forEach(task => task.style.display = "flex");
@@ -78,6 +79,17 @@ cancelBtn.addEventListener("click", () => hideAndShow(addTaskBtn, addTaskForm))
 
 // Event listener for each new task
 taskDivs.forEach(taskDiv => {
+    taskDiv.querySelector("#completed").addEventListener("click", () => {
+        const txt = taskDiv.querySelector(".task-title");
+        if (txt.style.textDecoration !== "line-through") {
+            txt.style.textDecoration = "line-through"
+            taskDiv.style.opacity = "0.5";
+        } else {
+            txt.style.textDecoration = "none";
+            taskDiv.style.opacity = "1";
+        }
+    })
+
     taskDiv.querySelector(".delete-btn").addEventListener("click", () => {
         deleteTask(taskDiv.querySelector(".task-title").textContent)
         taskDiv.remove();

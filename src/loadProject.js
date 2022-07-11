@@ -1,4 +1,6 @@
-import { projects } from "./project";
+import { resetPage } from ".";
+import { loadTasks } from "./loadTasks";
+import { projects, deleteProject } from "./project";
 import { editTask, tasks } from "./task.js";
 
 
@@ -20,13 +22,24 @@ function loadThisProject(project) {
     tasksDiv.forEach(task => {
         if (project.trim() !== task.querySelector(".task-project").textContent) {
             task.style.display = "none";
-        }
+        } else task.style.display = "flex";
     })
 
-    let projectTitle = document.createElement("h1");
-    projectTitle.id = "project-page"
-    projectTitle.textContent = project
-    content.prepend(projectTitle)
+    if (!document.querySelector("#project-page")) {
+        let projectTitle = document.createElement("div");
+        projectTitle.id = "project-page";
+        projectTitle.innerHTML = `<h1>${project}</h1><i class="fa-solid fa-trash delete-btn" id="delete-project">`
+        content.prepend(projectTitle)
+
+        projectTitle.querySelector("i").addEventListener("click", () => {
+            deleteProject(project)
+            const taskDivs = document.querySelectorAll(".task");   
+            taskDivs.forEach(e => {
+                if (e.querySelector(".task-project").textContent === project.trim()) e.remove()
+            })
+            resetPage()
+        })
+    } else document.querySelector("#project-page h1").textContent = project
 }
 
 export { loadProject, loadThisProject };

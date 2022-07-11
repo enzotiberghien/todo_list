@@ -21,8 +21,21 @@ main {
     background-color: #EFF2F1;
 }
 
+#add-task-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 4%;
+}
+
 #add-task-btn, #add-task-btn i {
-    color: black;
+    color: #4059AD;
+    cursor: pointer;
+    margin-right: 1%;
+}
+
+#add-task-btn:hover, #add-task-btn i:hover {
+    font-size: 1.7rem;
 }
 
 #content {
@@ -37,6 +50,11 @@ main {
 
 .navbar-items {
     padding: 6% 5%;
+    cursor: pointer;
+}
+
+.navbar-items:hover, .navbar-items i {
+    color: white;
 }
 
 #project-container {
@@ -48,6 +66,11 @@ main {
     width: 80%;
     margin-left: auto;
     padding: 6% 3%;
+    cursor: pointer;
+}
+
+.project:hover * {
+    color: white;
 }
 
 /* Todos page */
@@ -102,6 +125,24 @@ main {
     width: 30%;
 }
 
+.edit-btn {
+    color: #4059AD;
+    cursor: pointer;
+}
+
+.edit-btn:hover {
+    font-size: 1.1rem
+}
+
+.delete-btn, .delete-project {
+    color: red;
+    cursor: pointer;
+}
+
+.delete-btn:hover, .delete-project:hover {
+    font-size: 1.1rem
+}
+
 /* Add task form */
 
 #task-form {
@@ -121,11 +162,37 @@ main {
 .add-task-form * {
     color: black;
     font-size: 1.1rem;
-    padding: 0.5% 1.5%;
+    padding: 0.75% 1.75%;
+    border: 2px solid #4059AD;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    background-color: rgba(235, 235, 235, 0.1);
+}
+
+.add-task-form button:nth-of-type(1) {
+    background-color: #21BF73;
+    color: white;
+    border-color: #167e4b;
+}
+
+.add-task-form button:nth-of-type(2) {
+    background-color: #FF0000;
+    color: white;
+    border-color: #9a0202;
+}
+
+.add-task-form button:hover {
+    font-size: 1.2rem;
 }
 
 .task-project {
     font-style: italic;
+}
+
+
+#completed {
+    cursor: pointer;
 }
 
 #project-form {
@@ -137,8 +204,18 @@ main {
 }
 
 #project-page {
-    color: black;
-    /* display: none; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#project-page h1 {
+    color: #4059AD;
+}
+
+#project-page i {
+    padding-right: 4.3%;
 }
 
 #project-form div {
@@ -152,15 +229,52 @@ main {
 #project-form input {
     width: 100%;
     font-size: 1.2rem;
-    padding: 1% 3%;
+    padding: 2% 4%;
     color: black;
 }
 
 #project-form button {
     width: 50%;
     font-size: 1.2rem;
+    padding: 3%;
+    cursor: pointer;
+}
+
+.add-project-form input {
     color: black;
-    padding: 1%;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    background-color: white;
+}
+
+.add-project-form button:nth-of-type(1) {
+    outline: none;
+    background-color: #21BF73;
+    color: white;
+    border: 2px solid #167e4b;
+    margin: 1%;
+    border-radius: 5px;
+}
+
+.add-project-form button:nth-of-type(2) {
+    outline: none;
+    background-color: #FF0000;
+    color: white;
+    border: 2px solid #9a0202;
+    margin: 1%;
+    border-radius: 5px;
+}
+
+.add-project-form button:hover {
+    font-size: 1.2rem;
+}
+
+.add-project-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 footer {

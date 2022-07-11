@@ -8,7 +8,7 @@ function loadToday() {
     tasksDiv.forEach(task => {
         if (new Date().getDate() !== new Date(task.querySelector(".task-date").textContent).getDate()) {
             task.style.display = "none";
-        }
+        } else task.style.display = "flex";
     })
 }
 

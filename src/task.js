@@ -94,6 +94,11 @@ function deleteTask(task) {
     updateTasksList();
 }
 
+function deleteTaskByProject(project) {
+    tasks = tasks.filter(e => e["project"] !== project.trim());
+    updateTasksList();
+}
+
 function editTask(task, title, project, date, priority) {
     const objIndex = tasks.findIndex((obj => obj.title == task));
     tasks[objIndex].title = title
@@ -108,4 +113,4 @@ function updateTasksList() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
-export { tasks, Task, createTask, deleteTask, editTask };
+export { tasks, Task, createTask, deleteTask, editTask, deleteTaskByProject };
